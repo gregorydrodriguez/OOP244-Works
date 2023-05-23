@@ -1,0 +1,11 @@
+lab 1
+
+lab 1 was a good intro to learn what is expected of a full program. I learned how to cohesively work modules together We primarily organized the modules. I had issues due
+having global variables within the header files. We learned to implement namespace for the scope of our functions and std(library of prebuilt functions). The lab encouraged
+that I do not include unnecessary headers or values in each file. 
+
+diy 1
+
+Primarily a recap on what we learned in IPC144. We created prebuilt functions from the std.io pre built functions (within c). The diy tested our logic and syntax.
+I had to learn a new technique for the strstr() function. It would be the first time I had to put a loop within a loop, but my biggest lesson was learning to use break.
+After researching online, it seems that I can escape a loop using break. Online, it was suggested to use breaks sparingly.
