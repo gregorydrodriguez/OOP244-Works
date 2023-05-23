@@ -11,9 +11,11 @@ I have done all the coding by myself and only copied the code that my professor 
 
 namespace sdds {
 void strCpy(char* des, const char* src) {
-    for (int i = 0; i < strLen(src); i++) {
+    int i;
+    for (i = 0; i < strLen(src); i++) {
         des[i] = src[i];
     }
+    des[i] = '\0';
 }
 
 void strnCpy(char* des, const char* src, int len) {
@@ -22,7 +24,7 @@ void strnCpy(char* des, const char* src, int len) {
         des[i] = src[i];
     }
     if (strLen(src) < len) {
-        des[i + 1] = '\0';
+        des[i] = '\0';
     }
 }
 
