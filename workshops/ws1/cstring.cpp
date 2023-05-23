@@ -35,7 +35,6 @@ int strCmp(const char* s1, const char* s2) {
         len = strLen(s2);
     }
 
-    // what happens in this loop if s1 = "aa" and s2 = "ab"?
     for (int i = 0; i < len; i++) {
         if (s1[i] > s2[i]) {
             return 1;
