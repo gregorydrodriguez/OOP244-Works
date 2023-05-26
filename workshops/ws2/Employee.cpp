@@ -66,7 +66,7 @@ bool load() {
         }
         // noOfRecords() returns 13 when there are 14 records
         // because there is no new line at the end of the csv
-        if (noOfEmployees != (i - 1)) {
+        if (noOfEmployees != (i)) {
             cout << "Error: incorrect number of records read; the data is possibly corrupted" << endl;
         } else {
             ok = true;
