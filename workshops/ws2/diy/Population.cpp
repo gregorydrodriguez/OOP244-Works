@@ -40,7 +40,7 @@ bool load(PCPop& pop) {
     int population;
     if (read(pCode) && read(population)) {
         pop.pCode = new char[strLen(pCode) + 1];
-        strcpy(pop.pCode, pCode);
+        strCpy(pop.pCode, pCode);
         pop.population = population;
         ok = true;
     }
