@@ -1,0 +1,13 @@
+WS2
+
+ws2 involved overloading functions, dynamic memory, and deallocating memory
+
+overloading consists of a multiple function declarations with the same indentifier, but
+different parameters (in some cases no parameters) and different order of parameters.
+
+dynamic memory is created when we use the "new" keyword. The operating system determines where that
+memory is (aka allocating memory).
+
+deallocating memory. An easy rule to go by is to "delete" (delete [] for arrays) for any type that
+was declared with the "new" keyword. You have to delete each property as well as the structure. If the
+structure has multiple indices, you can implement a loop to deleter each index.
