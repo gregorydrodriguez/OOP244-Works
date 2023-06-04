@@ -45,7 +45,7 @@ void Item::display() const {
     if (isValid()) {
         cout << "| ";
         cout << left << setw(20) << setfill('.') << m_itemName << " | ";
-        cout << right << setw(7) << setfill(' ') << m_price << " | ";
+        cout << right << setw(7) << fixed << setprecision(2) << setfill(' ') << m_price << " | ";
         cout << (m_taxed ? "Yes" : "No ") << " |" << endl;
     } else {
         cout << "| xxxxxxxxxxxxxxxxxxxx | xxxxxxx | xxx |" << endl;
