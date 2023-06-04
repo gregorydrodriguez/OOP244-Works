@@ -20,7 +20,7 @@ bool Bill::isValid() const {
     }
 
     int i = 0;
-    for (i = 0; i < m_itemsAdded; i++) {
+    for (i = 0; i < m_noOfItems; i++) {
         if (!m_items[i].isValid()) {
             return false;
         }
