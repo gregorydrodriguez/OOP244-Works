@@ -2,6 +2,7 @@
 
 #include <iomanip>
 #include <iostream>
+#include <cstring>
 
 #include "cstring.h"
 
@@ -11,7 +12,7 @@ namespace sdds {
 const double TAX = 0.13;
 
 void Item::setName(const char* name) {
-    strnCpy(m_itemName, name, 20);
+    strncpy(m_itemName, name, 20);
 }
 
 void Item::setEmpty() {
