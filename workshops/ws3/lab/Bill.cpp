@@ -15,7 +15,17 @@ void Bill::setEmpty() {
 }
 
 bool Bill::isValid() const {
-    return (m_title[0] != '\0' || m_items != nullptr);
+    if (m_title[0] == '\0' || m_items == nullptr) {
+        return false;
+    }
+
+    int i = 0;
+    for (i = 0; i < m_itemsAdded; i++) {
+        if (!m_items[i].isValid()) {
+            return false;
+        }
+    }
+    return true;
 }
 
 double Bill::totalTax() const {
