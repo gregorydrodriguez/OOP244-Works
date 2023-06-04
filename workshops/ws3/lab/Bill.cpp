@@ -66,7 +66,7 @@ void Bill::init(const char* title, int noOfItems) {
     } else {
         m_noOfItems = noOfItems;
         m_itemsAdded = 0;
-        strncpy(m_title, title, 36);
+        strnCpy(m_title, title, 36);
         m_items = new Item[noOfItems];
         int i;
         for (i = 0; i < noOfItems; i++) {
