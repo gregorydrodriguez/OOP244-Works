@@ -98,7 +98,7 @@ bool Bill::add(const char* item_name, double price, bool taxed) {
 void Bill::display() const {
     Title();
     int i = 0;
-    for (i = 0; i < m_itemsAdded; i++) {
+    for (i = 0; i < m_noOfItems; i++) {
         m_items[i].display();
     }
     footer();
