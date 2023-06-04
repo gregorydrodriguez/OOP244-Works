@@ -81,7 +81,9 @@ void Bill::init(const char* title, int noOfItems) {
         m_items = new Item[noOfItems];
         int i;
         for (i = 0; i < noOfItems; i++) {
-            m_items[i].setEmpty();
+            Item item = Item();
+            item.setEmpty();
+            m_items[i] = item;
         }
     }
 }
