@@ -42,7 +42,7 @@ void CalorieList::title() const {
     } else {
         cout << "| Invalid Calorie Consumption list                   |" << endl;
     }
-    cout << "+----------------------------------------------------+" << endl;
+    cout << "+--------------------------------+------+------------+" << endl;
     cout << "| Food name                      | Cals | When       |" << endl;
     cout << "+--------------------------------+------+------------+" << endl;
 }
