@@ -1,0 +1,23 @@
+/*
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+Name: Gregory Rodriguez 
+E-mail: grodriguez13@myseneca.ca
+Student #: 127880227
+Date: June 4, 2023
+*/
+
+reflect ws3
+
+Public/Private Members & Methods
+
+    When creating a class all members and methods are private by default. Private members can't be accessed unless you use a public method (you can use other functions within public methods
+as well). You can access private members only within the class itself.
+
+iostream/std namespace
+
+    Usage of cout and endl. cout outputs to console, and endl creates a newline as well as clearing the buffer.
+
+const functions
+
+    const functions do not change the value of class members
+
