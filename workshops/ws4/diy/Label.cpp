@@ -25,7 +25,6 @@ void Label::setContent(const char* content) {
     strcpy(m_content, content);
 }
 
-
 Label::Label() {
     setDefault();
     setFrame("+-+|+-+|");
@@ -59,8 +58,8 @@ void Label::readLabel() {
 // 7   3
 // 6 5 4
 std::ostream& Label::printLabel() const {
-    int len = strlen(m_content) + 2;
     if (m_content != nullptr) {
+        int len = strlen(m_content) + 2;
         cout << m_frame[0];
         for (int i = 0; i < len; i++) {
             cout << m_frame[1];
