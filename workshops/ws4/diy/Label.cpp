@@ -49,7 +49,7 @@ Label::~Label() {
 
 void Label::readLabel() {
     char temp[71];
-    cin.getline(temp, 70);
+    cin.getline(temp, 71);
     setContent(temp);
 }
 
