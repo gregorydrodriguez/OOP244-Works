@@ -59,25 +59,26 @@ void Label::readLabel() {
 // 7   3
 // 6 5 4
 std::ostream& Label::printLabel() const {
+    int len = strlen(m_content) + 2;
     if (m_content != nullptr) {
         cout << m_frame[0];
-        for (int i = 0; i < strlen(m_content) + 2; i++) {
+        for (int i = 0; i < len; i++) {
             cout << m_frame[1];
         };
         cout << m_frame[2] << endl;
         cout << m_frame[7];
-        for (int i = 0; i < strlen(m_content) + 2; i++) {
+        for (int i = 0; i < len; i++) {
             cout << " ";
         }
         cout << m_frame[3] << endl;
         cout << m_frame[7] << " " << m_content << " " << m_frame[3] << endl;
         cout << m_frame[7];
-        for (int i = 0; i < strlen(m_content) + 2; i++) {
+        for (int i = 0; i < len; i++) {
             cout << " ";
         }
         cout << m_frame[3] << endl;
         cout << m_frame[6];
-        for (int i = 0; i < strlen(m_content) + 2; i++) {
+        for (int i = 0; i < len; i++) {
             cout << m_frame[5];
         };
         cout << m_frame[4] << endl;
