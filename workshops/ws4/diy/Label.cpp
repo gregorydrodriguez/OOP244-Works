@@ -2,6 +2,7 @@
 
 #include <cstring>
 #include <iostream>
+#include <string>
 
 #include "LabelMaker.h"
 
@@ -48,16 +49,14 @@ Label::~Label() {
 
 void Label::readLabel() {
     char temp[71];
-    cin >> temp;
-    cin.ignore(70, '\n');
-    cin.clear();
+    cin.getline(temp, 70);
     setContent(temp);
 }
 
 // 0 1 2
 // 7   3
 // 6 5 4
-std::ostream& Label::printLabel() const {
+ostream& Label::printLabel() const {
     if (m_content != nullptr) {
         int len = strlen(m_content) + 2;
         cout << m_frame[0];
