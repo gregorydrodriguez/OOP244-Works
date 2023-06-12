@@ -1,1 +1,34 @@
-no time at the moment
+/*
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+Name: Gregory Rodriguez 
+E-mail: grodriguez13@myseneca.ca
+Student #: 127880227
+Date: June 12, 2023
+*/
+
+WS 4
+
+Constructor Overloads
+I learned to implement overloads for constructors. Similarly to function overloading, constructors
+can be overloaded; the constructor follows the syntax of a class' name and parenthesis.
+An example of overloading a constructor is you have a class that contains 3 members of different types.
+You can create a constructor without parameters, a constructor with 1 parameter, and so fourth until 3.
+
+This was useful in our lab, where member values would change if all the information was present,
+or not, for the containers. It gave an understanding of the application of constructor overloads.
+
+~Destructor
+is created to deallocate memory. Note, that objects will be called in reverse order that they were created.
+
+strcpy
+finally understood the importance of strcpy for memory allocation via the heap. In parallel I am grasping
+concept of deallocating memory to prevent the MANY segmentation faults occuring after running
+the labs/diys
+
+LabelMaker
+This function reinforces the understanding of scope, pointers, and the heap. Since I am creating
+an array of objects, within the LabelMaker function, all the objects would be destroyed after leaving
+the scope. In response you have to create an array of pointers to objects that is stored in the heap.
+When leaving the scope of LabelMaker, the objects are still being stored.
+
+
