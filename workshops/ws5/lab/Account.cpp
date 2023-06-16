@@ -18,7 +18,7 @@ Valid 5 digit integer and balance
 */
 
 Account::operator bool() const {
-    return (m_number != -1 && m_balance >= 0.0);
+    return (m_number >= 10000 && m_number <= 99999 && m_balance >= 0.0);
 }
 
 Account::operator int() const {
@@ -79,7 +79,7 @@ Account& Account::operator<<(Account& account) {
 Account& Account::operator>>(Account& account) {
     if (m_number != account.m_number) {
         account.m_balance += m_balance;
-        m_balance = 0.0;  // Bug here
+        m_balance = 0.0;
     }
     return *this;
 }
@@ -131,4 +131,5 @@ std::ostream& Account::display() const {
     }
     return cout;
 }
+
 }  // namespace sdds
