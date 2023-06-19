@@ -9,13 +9,14 @@ Student #: 127880227
 namespace sdds {
 class Mark {
     int m_mark;
+    double m_gpa;
+    char m_grade;
     bool isValid;
     void checkValidity();
 
    public:
     Mark();
     Mark(int mark);
-
     operator int();
     operator double();
     operator char();
@@ -23,6 +24,6 @@ class Mark {
     Mark& operator=(const int value);
 };
 
-int operator+=(int value, Mark& mark);
+int& operator+=(int& value, Mark& mark);
 }  // namespace sdds
 #endif  // SDDS_MARK_H

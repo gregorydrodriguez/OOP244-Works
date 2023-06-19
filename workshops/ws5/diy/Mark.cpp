@@ -17,34 +17,34 @@ Mark::operator int() {
 Mark::operator double() {
     switch (m_mark) {
         case 0 ... 49:
-            return 0;
+            return m_gpa = 0;
         case 50 ... 59:
-            return 1;
+            return m_gpa = 1;
         case 60 ... 69:
-            return 2;
+            return m_gpa = 2;
         case 70 ... 79:
-            return 3;
+            return m_gpa = 3;
         case 80 ... 100:
-            return 4;
+            return m_gpa = 4;
         default:
-            return 0;
+            return m_gpa = 0;
     }
 }
 
 Mark::operator char() {
     switch (m_mark) {
         case 0 ... 49:
-            return 'F';
+            return m_grade = 'F';
         case 50 ... 59:
-            return 'D';
+            return m_grade = 'D';
         case 60 ... 69:
-            return 'C';
+            return m_grade = 'C';
         case 70 ... 79:
-            return 'B';
+            return m_grade = 'B';
         case 80 ... 100:
-            return 'A';
+            return m_grade = 'A';
         default:
-            return 'X';
+            return m_grade = 'X';
     }
 }
 
@@ -54,8 +54,9 @@ Mark& Mark::operator+=(int value) {
     return *this;
 }
 
-int operator+=(int value, Mark& mark) {
-    return value += int(mark);
+int& operator+=(int& value, Mark& mark) {
+    value += int(mark);
+    return value;
 }
 
 Mark& Mark::operator=(const int value) {
