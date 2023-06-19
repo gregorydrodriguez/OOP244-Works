@@ -1,0 +1,23 @@
+/*
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+Name: Gregory Rodriguez
+E-mail: grodriguez13@myseneca.ca
+Student #: 127880227
+*/
+
+Reflect.txt
+Workshop 5 - DIY
+
+Type Conversion/Casts Operators
+Using type conversion operators taught me how to change the behaviour of the operator. It
+seems the output or logic does not have to relate to the type operators identifier when
+overloading within my DIY.
+
+Operator Overloading
+Most of my overloads were binary overloads. I learned how to create overloads to accomodate
+specific interactions with values, variables, and objects.
+
+Implementing Type & Operator Overload
+markMain.cpp implemented type cast overloading + operator overloading. This helped in
+understanding how these functions work via it's original code. Essentially, this helps the
+students understand the abstraction behind the scenes.

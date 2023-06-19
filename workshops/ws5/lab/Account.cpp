@@ -11,12 +11,6 @@ Student #: 127880227
 
 using namespace std;
 namespace sdds {
-/*
-Invalid Empty State = m_number == -1, m_balance == 0
-New or Not Set = m_number == 0
-Valid 5 digit integer and balance
-*/
-
 Account::operator bool() const {
     return (m_number >= 10000 && m_number <= 99999 && m_balance >= 0.0);
 }
