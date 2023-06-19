@@ -9,8 +9,6 @@ Student #: 127880227
 namespace sdds {
 class Mark {
     int m_mark;
-    double m_gpa;
-    char m_grade;
     bool isValid;
     void checkValidity();
 

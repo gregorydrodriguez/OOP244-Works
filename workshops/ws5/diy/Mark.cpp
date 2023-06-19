@@ -17,34 +17,34 @@ Mark::operator int() {
 Mark::operator double() {
     switch (m_mark) {
         case 0 ... 49:
-            return m_gpa = 0;
+            return 0;
         case 50 ... 59:
-            return m_gpa = 1;
+            return 1;
         case 60 ... 69:
-            return m_gpa = 2;
+            return 2;
         case 70 ... 79:
-            return m_gpa = 3;
+            return 3;
         case 80 ... 100:
-            return m_gpa = 4;
+            return 4;
         default:
-            return m_gpa = 0;
+            return 0;
     }
 }
 
 Mark::operator char() {
     switch (m_mark) {
         case 0 ... 49:
-            return m_grade = 'F';
+            return 'F';
         case 50 ... 59:
-            return m_grade = 'D';
+            return 'D';
         case 60 ... 69:
-            return m_grade = 'C';
+            return 'C';
         case 70 ... 79:
-            return m_grade = 'B';
+            return 'B';
         case 80 ... 100:
-            return m_grade = 'A';
+            return 'A';
         default:
-            return m_grade = 'X';
+            return 'X';
     }
 }
 
