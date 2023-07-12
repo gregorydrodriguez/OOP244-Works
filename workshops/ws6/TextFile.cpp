@@ -82,7 +82,7 @@ void TextFile::loadText() {
 
 void TextFile::saveAs(const char* fileName) const {
     ofstream file(fileName);
-    for (int i = 0; i < m_noOfLines; i++) {
+    for (unsigned int i = 0; i < m_noOfLines; i++) {
         file << m_textLines[i] << endl;
     }
     file.close();
