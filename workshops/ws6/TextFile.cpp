@@ -6,6 +6,7 @@ Student #: 127880227
 */
 #include "TextFile.h"
 
+#include <cstring>
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -136,7 +137,7 @@ unsigned TextFile::lines() const {
 ostream& TextFile::view(ostream& ostr) const {
     if (*this) {
         ostr << m_filename << endl;
-        int i, j;
+        unsigned int i, j;
         for (i = 0; i < strlen(m_filename); i++) {
             ostr << '=';
         }
