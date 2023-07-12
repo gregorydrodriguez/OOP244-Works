@@ -1,0 +1,31 @@
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+Name: Gregory Rodriguez
+E-mail: grodriguez13@myseneca.ca
+Student #: 127880227
+
+Workshop 6 lab
+
+The Rule of 3 - Copy Constructor
+
+The copy constructor is implemented to deep copy the values of one object to a another object. This requires making sure the object receiving the
+the new values is first set to an empty state. To prevent repetitive code, we implement our object methods into the copy constructor. This will
+prove useful in our copy assignment overload.
+
+The Rule of 3 - Copy Assignment
+
+The copy assignment overloads the '=' operator. Similar to the copy constructor we set the current object to a safe empty state. We then deep copy
+all of the values with the help of some of our other functions that take care of the abstraction.
+
+The Rule of 3 - Destructor
+
+Simply deallocates memory from the heap
+
+this vs *this
+
+I had a lot of issues, because I was using this instead of *this. This created segmentation faults during compilation. this passes the pointer, while
+*this passes the values.
+
+istr.ignore()
+
+In getFile(), I had forgot to implement istr.ignore to clean up after myself and spent hours trying to debug. This function will clear the input buffer 
+via the istr object.
