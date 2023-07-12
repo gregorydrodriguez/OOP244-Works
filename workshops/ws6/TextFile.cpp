@@ -142,6 +142,7 @@ ostream& TextFile::view(ostream& ostr) const {
             ostr << '=';
         }
         ostr << endl;
+        j = 0;
         for (i = 0; i < m_noOfLines; i++) {
             ostr << m_textLines[i] << endl;
             j++;
