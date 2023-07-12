@@ -116,8 +116,8 @@ TextFile::TextFile(const TextFile& srcFile) {
 
 TextFile& TextFile::operator=(const TextFile& incFile) {
     if (*this && incFile) {
-        setEmpty();
-        setFilename(incFile.m_filename, false);
+        delete[] m_textLines;
+        m_textLines = nullptr;
         incFile.saveAs(m_filename);
         setNoOfLines();
         loadText();
