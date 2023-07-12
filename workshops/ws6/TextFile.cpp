@@ -147,7 +147,7 @@ ostream& TextFile::view(ostream& ostr) const {
             ostr << m_textLines[i] << endl;
             j++;
             if (j == m_pageSize) {
-                ostr << "Hit Enter to continue...";
+                ostr << "Hit ENTER to continue...";
                 cin.ignore();
                 j = 0;
             }
