@@ -53,7 +53,9 @@ bool Date::operator==(const Date& sourceDate) const {
 
 ostream& Date::write(ostream& os) const {
     if (bad()) {
-        dateStatus();
+        // dateTester and ms1_tester work differently...
+        // dateStatus();
+        os << dateStatus();
     } else {
         os << m_year << "/";
         os << setw(2) << setfill('0') << m_mon << "/";
