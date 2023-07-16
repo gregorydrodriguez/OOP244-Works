@@ -21,10 +21,7 @@ Date::operator bool() const {
 }
 
 int Date::operator-(const Date& sourceDate) const {
-    if (*this > sourceDate) {
-        return daysSince0001_1_1() - sourceDate.daysSince0001_1_1();
-    }
-    return sourceDate.daysSince0001_1_1() - daysSince0001_1_1();
+    return daysSince0001_1_1() - sourceDate.daysSince0001_1_1();
 }
 
 bool Date::operator>(const Date& sourceDate) const {
@@ -53,8 +50,6 @@ bool Date::operator==(const Date& sourceDate) const {
 
 ostream& Date::write(ostream& os) const {
     if (bad()) {
-        // dateTester and ms1_tester work differently...
-        // dateStatus();
         os << dateStatus();
     } else {
         os << m_year << "/";
