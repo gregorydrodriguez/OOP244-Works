@@ -67,7 +67,7 @@ unsigned int Menu::run() const {
 }
 
 ostream& Menu::displayMenu() const {
-    for (int i = 0; i < m_numOfItems; i++) {
+    for (unsigned int i = 0; i < m_numOfItems; i++) {
         cout << setw(2) << right << i + 1 << "- " << m_menuItems[i]->m_itemName << endl;
     }
     cout << setw(4) << right << "0- "
@@ -94,7 +94,7 @@ Menu::Menu(const char* srcTitle) {
 }
 
 Menu::~Menu() {
-    for (int i = 0; i < MAX_MENU_ITEMS; i++) {
+    for (unsigned int i = 0; i < MAX_MENU_ITEMS; i++) {
         delete m_menuItems[i];
     }
     delete m_menuTitle;
