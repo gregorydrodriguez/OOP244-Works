@@ -4,7 +4,7 @@
 #include <iomanip>
 #include <iostream>
 #include <limits>
-#include <string>
+#include <cstring>
 
 using namespace std;
 namespace sdds {
