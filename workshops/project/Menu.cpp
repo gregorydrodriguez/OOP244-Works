@@ -106,7 +106,7 @@ MenuItem::MenuItem() {
 }
 
 MenuItem::MenuItem(const char* itemName) {
-    m_itemName = new char[strlen(itemName + 1)];
+    m_itemName = new char[strlen(itemName) + 1];
     strcpy(m_itemName, itemName);
 }
 
