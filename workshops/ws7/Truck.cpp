@@ -7,7 +7,7 @@ Student #: 127880227
 #include "Truck.h"
 
 #include <cstring>
-
+#include <limits>
 #include "MotorVehicle.h"
 
 using namespace std;
