@@ -1,0 +1,13 @@
+ws7 - Inheritance
+
+Parent(Base) & Child(Derived) Classes
+The child class can inherit the attributes and methods of it's parent/Base
+class. This means you don't have to create new attributes/methods, due to the
+child/derived class inheriting these members.
+
+Parent Constructor Call
+You can reuse code for the child constructor by calling the parent's constructor.
+
+Protected Members 
+protected members are similar to private members, with the exception that
+child/derived classes have access to these members.
