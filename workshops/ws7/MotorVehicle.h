@@ -18,7 +18,7 @@ class MotorVehicle {
     int m_year;
 
    public:
-    MotorVehicle(const char* licensePlate = "VVV-111", const int year = 2010);
+    MotorVehicle(const char* licensePlate, const int year);
     void moveTo(const char* address);
     std::ostream& write(std::ostream& os) const;
     std::istream& read(std::istream& in);

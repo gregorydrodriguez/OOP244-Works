@@ -13,19 +13,22 @@ Student #: 127880227
 using namespace std;
 
 namespace sdds {
-Truck::Truck(const char* licensePlate, const int year, const double capacity, const char* address) {
-    MotorVehicle(licensePlate, year);
+Truck::Truck(const char* licensePlate, const int year, const double capacity, const char* address) : MotorVehicle(licensePlate, year) {
     m_capacity = capacity;
-    strcpy(m_address, address);
     m_cargo = 0;
+    moveTo(address);
+    strcpy(m_address, address);
 }
 
 bool Truck::addCargo(double cargo) {
-    if (m_capacity > m_cargo + cargo) {
-        m_cargo += cargo;
-        return true;
+    if (m_capacity == m_cargo) {
+        return false;
     }
-    return false;
+    m_cargo = m_cargo + cargo;
+    if (m_capacity < m_cargo) {
+        m_cargo = m_capacity;
+    }
+    return true;
 }
 
 bool Truck::unloadCargo() {

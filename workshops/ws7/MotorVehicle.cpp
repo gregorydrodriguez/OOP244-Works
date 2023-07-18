@@ -13,7 +13,7 @@ Student #: 127880227
 
 using namespace std;
 namespace sdds {
-    
+
 // Motor Vehicle Class Methods (parent)
 MotorVehicle::MotorVehicle(const char* licensePlate, const int year) {
     strcpy(m_licensePlate, licensePlate);
@@ -22,10 +22,10 @@ MotorVehicle::MotorVehicle(const char* licensePlate, const int year) {
 }
 
 void MotorVehicle::moveTo(const char* address) {
+    cout << "|" << right << setw(8) << m_licensePlate;
+    cout << "| |" << right << setw(20) << m_address << " ---> ";
+    cout << left << setw(20) << address << "|" << endl;
     if (m_address != address) {
-        cout << "|" << right << setw(8) << m_licensePlate;
-        cout << "| |" << right << setw(20) << m_address << " ---> ";
-        cout << left << setw(20) << address << "|" << endl;
         strcpy(m_address, address);
     }
 }
