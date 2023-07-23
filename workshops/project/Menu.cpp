@@ -1,10 +1,10 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "Menu.h"
 
+#include <cstring>
 #include <iomanip>
 #include <iostream>
 #include <limits>
-#include <cstring>
 
 using namespace std;
 namespace sdds {
@@ -15,7 +15,7 @@ ostream& operator<<(ostream& ostr, const Menu& menu) {
 }
 
 const char* Menu::operator[](unsigned int index) const {
-    return (const char*)(m_menuItems[index]->m_itemName);
+    return (const char*)(*m_menuItems[index]);
 }
 
 const char* Menu::getMenuTitle() const {
@@ -78,12 +78,13 @@ ostream& Menu::displayMenu() const {
 ostream& Menu::displayTitle() const {
     const char* title = getMenuTitle();
     if (title[0] != '\0') {
-        cout << title << ":" << endl;
+        cout << title << endl;
     }
     return cout;
 }
 
 Menu::Menu() {
+    cout << "default" << endl;
     m_menuTitle = new MenuItem();
     m_numOfItems = 0;
 }
