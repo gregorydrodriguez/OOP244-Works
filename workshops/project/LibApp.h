@@ -8,9 +8,13 @@ class LibApp {
     Menu* m_mainMenu;
     Menu* m_exitMenu;
     bool confirm(const char* message);
+    LibApp(const LibApp&) = delete;
+    LibApp& operator=(const LibApp&) = delete;
+
 
    public:
     LibApp();
+    ~LibApp();
     void load();
     void save();
     void search();

@@ -17,6 +17,11 @@ LibApp::LibApp() {
     load();
 }
 
+LibApp::~LibApp() {
+    delete m_mainMenu;
+    delete m_exitMenu;
+}
+
 bool LibApp::confirm(const char* message) {
     Menu* confirmMenu = new Menu(message);
     *confirmMenu << "Yes";
@@ -113,8 +118,8 @@ void LibApp::run() {
                 }
             } else {
                 done = true;
-            }  
-        } 
+            }
+        }
     }
 
     cout << endl;
