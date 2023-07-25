@@ -31,6 +31,7 @@ void LblShape::getSpecs(std::istream& is) {
     string temp;
     getline(is, temp, ',');
     const char* labelName = temp.c_str();
+    delete[] m_label;
     m_label = new char[strlen(labelName) + 1];
     strcpy(m_label, labelName);
 }
