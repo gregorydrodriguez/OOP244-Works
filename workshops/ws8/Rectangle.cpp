@@ -2,6 +2,8 @@
 
 #include <iomanip>
 #include <string>
+#include <cstring>
+
 using namespace std;
 namespace sdds {
 Rectangle::Rectangle() : LblShape() {
