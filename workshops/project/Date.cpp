@@ -16,6 +16,10 @@
 using namespace std;
 #include "Date.h"
 namespace sdds {
+bool sdds_test = false;
+int sdds_year = 2023;
+int sdds_mon = 12;
+int sdds_day = 25;
 Date::operator bool() const {
     return !bad();
 }
@@ -66,11 +70,12 @@ istream& Date::read(istream& is) {
     is >> m_mon;
     is.ignore(numeric_limits<streamsize>::max(), '/');
     is >> m_day;
-    is.ignore(numeric_limits<streamsize>::max(), '\n');
+    // (removed for ms3) is.ignore(numeric_limits<streamsize>::max(), '\n');
+    // is.ignore(numeric_limits<streamsize>::max(), '\n');
     if (is.fail()) {
         errCode(CIN_FAILED);
-        is.clear();
-        is.ignore(numeric_limits<streamsize>::max(), '\n');
+        // is.clear();
+        // is.ignore(numeric_limits<streamsize>::max(), '\n');
     } else {
         validate();
     }
@@ -96,18 +101,42 @@ int Date::mdays() const {
     return days[mon] + int((mon == 1) * ((m_year % 4 == 0) && (m_year % 100 != 0)) || (m_year % 400 == 0));
 }
 
+// replaced for ms3
+// int Date::systemYear() const {
+//     time_t t = time(NULL);
+//     tm lt = *localtime(&t);
+//     return lt.tm_year + 1900;
+// }
 int Date::systemYear() const {
-    time_t t = time(NULL);
-    tm lt = *localtime(&t);
-    return lt.tm_year + 1900;
+    int theYear = sdds_year;
+    if (!sdds_test) {
+        time_t t = time(NULL);
+        tm lt = *localtime(&t);
+        theYear = lt.tm_year + 1900;
+    }
+    return theYear;
 }
-
+// replaced for ms3
+// void Date::setToToday() {
+//     time_t t = time(NULL);
+//     tm lt = *localtime(&t);
+//     m_day = lt.tm_mday;
+//     m_mon = lt.tm_mon + 1;
+//     m_year = lt.tm_year + 1900;
+//     errCode(NO_ERROR);
+// }
 void Date::setToToday() {
-    time_t t = time(NULL);
-    tm lt = *localtime(&t);
-    m_day = lt.tm_mday;
-    m_mon = lt.tm_mon + 1;
-    m_year = lt.tm_year + 1900;
+    if (sdds_test) {
+        m_day = sdds_day;
+        m_mon = sdds_mon;
+        m_year = sdds_year;
+    } else {
+        time_t t = time(NULL);
+        tm lt = *localtime(&t);
+        m_day = lt.tm_mday;
+        m_mon = lt.tm_mon + 1;
+        m_year = lt.tm_year + 1900;
+    }
     errCode(NO_ERROR);
 }
 

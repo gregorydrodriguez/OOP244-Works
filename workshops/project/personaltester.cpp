@@ -1,15 +1,13 @@
 #include <iostream>
 
-#include "Menu.h"
-#include "LibApp.h"
+#include "Publication.h"
 #include "Utils.h"
 using namespace std;
 using namespace sdds;
 
 int main() {
-    LibApp libApp = LibApp();
-    // libApp.confirm("Test");
-    // libApp.returnPub();
-    // libApp.newPublication();
-    libApp.run();
+  Publication p;
+  cout << p.checkoutDate() << endl;
+  p.resetDate();
+  cout << p.checkoutDate() << endl;
 }

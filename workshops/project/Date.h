@@ -40,6 +40,7 @@ class Date {
     int mdays() const;              // returns the number of days in current month
     void setToToday();              // sets the date to the current date (system date)
    public:
+   friend class Publication;
     Date();                           // creates a date with current date
     Date(int year, int mon, int day); /* create a date with assigned values
                                        then validates the date and sets the
@@ -62,5 +63,10 @@ class Date {
 };
 std::ostream& operator<<(std::ostream& os, const Date& RO);
 std::istream& operator>>(std::istream& is, Date& RO);
+
+extern bool sdds_test;
+extern int sdds_year;
+extern int sdds_mon;
+extern int sdds_day;
 }  // namespace sdds
 #endif
