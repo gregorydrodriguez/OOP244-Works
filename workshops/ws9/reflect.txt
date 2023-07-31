@@ -1,0 +1,29 @@
+/*
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+Name: Gregory Rodriguez
+E-mail: grodriguez13@myseneca.ca
+Student #: 127880227
+Date: July 30, 2023
+*/
+
+WS9 Derived Classes & Resources
+In this workshop we had a parent/base class (Text) and a child/derived class (HtmlText).
+
+Copy Constructor via Derived Classes (Rule of 3)
+The syntax for the derived class' copy constructor is to make a small addition to the signature
+via the definition, ex. derivedIdentifier(classReference derivedObject) : baseIdentifier(derivedObject).
+To access the private members of the base class you must prefix the derived constructor with a ':'
+character followed by the base constructor.
+
+Copy Assignment via Derived Classes (Rule of 3)
+The copy assignment must be explicit when assigning private members within the base class. The 
+derived class must explicitly call the base classes overload operator for '=', in this lab, 
+to achieve this.
+
+Destructor via Derived Classes (Rule of 3)
+There is nothing different with the destructor, but the base destructor must be virtual.
+
+Protected
+The protected specifier allows members to be visible within the class and visible to derived
+classes.
+
