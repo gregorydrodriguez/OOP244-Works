@@ -42,7 +42,7 @@ void HtmlText::write(std::ostream& os) const {
                 multipleSpaces = false;
                 break;
             case '>':
-                os << "&gt";
+                os << "&gt;";
                 multipleSpaces = false;
                 break;
             case '\n':
