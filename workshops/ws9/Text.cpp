@@ -84,7 +84,7 @@ void Text::read() {
     if (fin.fail()) {
         setDefault();
     } else {
-        m_content = new char[getFileLength() + 1];
+        m_content = new char[getFileLength() + 2];
         string tempContent;
         string line;
         while (getline(fin, line)) {
