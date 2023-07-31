@@ -6,6 +6,7 @@ Student #: 127880227
 Date: July 30, 2023
 */
 #include "HtmlText.h"
+#include <cstring>
 namespace sdds {
 HtmlText::HtmlText(const char* filename, const char* title) : Text(filename) {
     if (filename) {
