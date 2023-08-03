@@ -1,3 +1,9 @@
+/*
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+Name: Gregory Rodriguez
+E-mail: grodriguez13@myseneca.ca
+Student #: 127880227
+*/
 #ifndef SDDS_PUBLICATION_H
 #define SDDS_PUBLICATION_H
 #include "Date.h"
@@ -13,6 +19,7 @@ class Publication : public Streamable {
     Date m_date;
 
    public:
+    void setDefault();
     Publication();
     virtual void set(int member_id);
     void setRef(int value);

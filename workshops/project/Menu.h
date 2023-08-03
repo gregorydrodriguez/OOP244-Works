@@ -1,3 +1,9 @@
+/*
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+Name: Gregory Rodriguez
+E-mail: grodriguez13@myseneca.ca
+Student #: 127880227
+*/
 #ifndef SDDS_MENU_H__
 #define SDDS_MENU_H__
 #include <iostream>

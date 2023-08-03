@@ -1,3 +1,9 @@
+/*
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+Name: Gregory Rodriguez
+E-mail: grodriguez13@myseneca.ca
+Student #: 127880227
+*/
 #include "Publication.h"
 
 #include <cstring>
@@ -5,6 +11,12 @@
 
 using namespace std;
 namespace sdds {
+void Publication::setDefault() {
+    m_title = nullptr;
+    strcpy(m_shelfID, "");
+    m_membership = 0;
+    m_libRef = -1;
+}
 
 /* Publication Object */
 Publication::Publication() {
@@ -66,7 +78,11 @@ bool Publication::conIO(ios& io) const {
 ostream& Publication::write(ostream& os) const {
     if (conIO(os)) {
         os << "| " << m_shelfID << " | ";
-        os << left << setw(SDDS_TITLE_WIDTH) << setfill('.') << m_title;
+        if (strlen(m_title) > SDDS_TITLE_WIDTH) {
+            os.write(m_title, SDDS_TITLE_WIDTH);
+        } else {
+            os << left << setw(SDDS_TITLE_WIDTH) << setfill('.') << m_title;
+        }
         os << " | ";
         onLoan() ? os << m_membership : os << " N/A ";
         os << " | " << m_date << " |";
