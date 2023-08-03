@@ -9,6 +9,8 @@ Student #: 127880227
 #include <iomanip>
 #include <iostream>
 #include <string>
+#include <limits>
+#include <cstring>
 
 using namespace std;
 namespace sdds {
