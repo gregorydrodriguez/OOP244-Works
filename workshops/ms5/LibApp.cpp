@@ -8,8 +8,10 @@ Student #: 127880227
 
 #include <fstream>
 #include <iostream>
+#include <iomanip>
 #include <limits>
 #include <string>
+#include <cstring>
 
 #include "Menu.h"
 #include "PublicationSelector.h"
