@@ -83,8 +83,8 @@ ostream& Publication::write(ostream& os) const {
             os << left << setw(SDDS_TITLE_WIDTH) << setfill('.') << m_title;
         }
         os << " | ";
-        // onLoan() ? os << m_membership : os << " N/A ";
-        os << m_membership << "\t";
+        onLoan() ? os << m_membership : os << " N/A ";
+        // os << m_membership << "\t";
         os << " | " << m_date << " |";
     } else {
         os << type() << "\t";
