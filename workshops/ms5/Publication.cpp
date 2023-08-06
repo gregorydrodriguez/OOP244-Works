@@ -84,7 +84,7 @@ ostream& Publication::write(ostream& os) const {
         }
         os << " | ";
         // onLoan() ? os << m_membership : os << " N/A ";
-        os << m_membership << endl;
+        os << m_membership << "\t";
         os << " | " << m_date << " |";
     } else {
         os << '\n';
@@ -93,7 +93,7 @@ ostream& Publication::write(ostream& os) const {
         os << m_shelfID << "\t";
         os << m_title << "\t";
         // onLoan() ? os << m_membership : os << " N/A ";
-        os << m_membership << endl;
+        os << m_membership << "\t";
         os << "\t";
         os << m_date;
     }
