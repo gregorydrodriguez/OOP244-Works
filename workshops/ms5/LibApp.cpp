@@ -278,6 +278,6 @@ void LibApp::run() {
     }
     cout << endl;
     cout << "-------------------------------------------" << endl;
-    cout << "Thanks for using Seneca Library Application" << endl;
+    cout << "Thanks for using Seneca Library Application";
 }
 }  // namespace sdds
