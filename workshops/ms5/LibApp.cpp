@@ -169,7 +169,7 @@ void LibApp::newPublication() {
         cout << "Library is at its maximum capacity!";
         return;
     }
-    cout << "Adding new publication to the library" << endl;
+    cout << "Adding new publication to library" << endl;
     int selection = m_pubTypeMenu->run();
     Publication* addition;
     if (selection == 1) {
@@ -183,7 +183,7 @@ void LibApp::newPublication() {
         cout << "Aborted!" << endl;
         return;
     } else {
-        if (confirm("Add this publication to library?")) {
+        if (confirm("Add this publication to the library?")) {
             if (bool(addition)) {
                 m_lastLibRefNum++;
                 addition->setRef(m_lastLibRefNum);
