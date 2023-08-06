@@ -94,7 +94,6 @@ ostream& Publication::write(ostream& os) const {
         os << m_title << "\t";
         // onLoan() ? os << m_membership : os << " N/A ";
         os << m_membership << "\t";
-        os << "\t";
         os << m_date;
     }
     return os;
