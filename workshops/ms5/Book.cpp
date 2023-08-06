@@ -57,6 +57,7 @@ ostream& Book::write(ostream& os) const {
         os << '\t';
         os << m_author;
     }
+    os << endl;
     return os;
 }
 

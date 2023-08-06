@@ -87,7 +87,6 @@ ostream& Publication::write(ostream& os) const {
         os << m_membership << "\t";
         os << " | " << m_date << " |";
     } else {
-        os << '\n';
         os << type() << "\t";
         os << m_libRef << "\t";
         os << m_shelfID << "\t";
