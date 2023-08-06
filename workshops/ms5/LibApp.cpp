@@ -43,6 +43,9 @@ LibApp::~LibApp() {
     delete m_mainMenu;
     delete m_exitMenu;
     delete m_pubTypeMenu;
+    for (int i = 0; i < m_numOfLoadedPubs; i++) {
+        delete m_publications[i];
+    }
 }
 
 bool LibApp::confirm(const char* message) {
