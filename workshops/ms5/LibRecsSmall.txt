@@ -1,3 +1,3 @@
 
-B	1	s005	abc	 N/A 	2023/08/05	john
-P	2	s004	ding	 N/A 	2023/08/05
+B	1	S001	dingus	0	2023/06/05	greg
+P	2	S002	Wingus	0	2023/08/04

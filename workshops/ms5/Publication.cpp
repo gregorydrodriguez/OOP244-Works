@@ -95,6 +95,9 @@ ostream& Publication::write(ostream& os) const {
         // onLoan() ? os << m_membership : os << " N/A ";
         os << m_membership << "\t";
         os << m_date;
+        if (type() == 'P') {
+            os << endl;
+        }
     }
     return os;
 }
