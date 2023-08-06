@@ -169,7 +169,7 @@ void LibApp::newPublication() {
         cout << "Library is at its maximum capacity!";
         return;
     }
-    cout << "Adding new publication to library" << endl;
+    cout << "Adding new publication to the library" << endl;
     int selection = m_pubTypeMenu->run();
     Publication* addition;
     if (selection == 1) {
