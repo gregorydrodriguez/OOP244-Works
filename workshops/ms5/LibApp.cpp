@@ -208,7 +208,7 @@ void LibApp::newPublication() {
 
 // MS5 Modification
 void LibApp::removePublication() {
-    cout << "Removing publication from library" << endl;
+    cout << "Removing publication from the library" << endl;
     int selection = search(1);
     if (confirm("Remove this publication from the library?")) {
         m_changed = true;
