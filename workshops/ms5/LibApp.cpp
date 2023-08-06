@@ -96,7 +96,7 @@ void LibApp::search() {
 
 // MS5 Modification
 int LibApp::search(int searchMode) {
-    cout << "Searching for publication" << endl;
+    // cout << "Searching for publication" << endl;
     int selection = m_pubTypeMenu->run();
     if (selection == 0) {
         cout << "Aborted!" << endl;
