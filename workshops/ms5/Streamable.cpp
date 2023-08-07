@@ -11,6 +11,8 @@ namespace sdds {
 std::ostream& operator<<(std::ostream& os, const Streamable& stream) {
     if (stream) {
         stream.write(os);
+    } else {
+        cout << "stream invalid" << endl;
     }
     return os;
 }

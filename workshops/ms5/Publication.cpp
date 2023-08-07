@@ -138,8 +138,7 @@ istream& Publication::read(istream& istr) {
     if (tempDate.validate() == false) {
         istr.setstate(ios::failbit);
     }
-
-    if (istr.good()) {
+    if (!istr.fail()) {
         m_title = new char[strlen(tempTitle) + 1];
         strcpy(m_title, tempTitle);
         strcpy(m_shelfID, tempShelfID);

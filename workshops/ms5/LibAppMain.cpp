@@ -19,7 +19,10 @@ void runApp(const char* filename) {
    char ch;
    char original[31] = "orig";
    // creating original file name
-   while(filename[i]) original[4u + i] = filename[i++];
+   while(filename[i]) {
+      original[4u + i] = filename[i];
+      i++;
+   }
    original[4u + i] = char(0);
    // copiying original values to data file;
    std::ofstream outFile(filename);

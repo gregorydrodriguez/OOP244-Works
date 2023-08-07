@@ -46,7 +46,7 @@ istream& Book::read(istream& is) {
 ostream& Book::write(ostream& os) const {
     Publication::write(os);
     if (conIO(os)) {
-        os << '\t';
+        os << ' ';
         if (strlen(m_author) > SDDS_AUTHOR_WIDTH) {
             os.write(m_author, SDDS_AUTHOR_WIDTH);
         } else {
@@ -56,8 +56,8 @@ ostream& Book::write(ostream& os) const {
     } else {
         os << '\t';
         os << m_author;
+        os << endl;
     }
-    os << endl;
     return os;
 }
 
