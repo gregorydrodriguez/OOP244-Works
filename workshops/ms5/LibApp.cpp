@@ -140,7 +140,8 @@ int LibApp::search(int searchMode) {
             cout << "Aborted!" << endl;
         }
     } else {
-        cout << "No matches found!" << endl << endl;
+        cout << "No matches found!" << endl
+             << endl;
         return -1;
     }
     return selection;
@@ -216,16 +217,16 @@ void LibApp::newPublication() {
 void LibApp::removePublication() {
     cout << "Removing publication from the library" << endl;
     int selection = search(1);
-    Publication* found = nullptr;
+    Publication* pub = nullptr;
     for (int i = 0; i < m_numOfLoadedPubs; i++) {
         if (m_publications[i]->getRef() == selection) {
             cout << *m_publications[i] << endl;
-            found = m_publications[i];
+            pub = m_publications[i];
         }
     }
     if (confirm("Remove this publication from the library?")) {
         m_changed = true;
-        found->setRef(0);
+        pub->setRef(0);
         cout << "Publication removed" << endl;
     }
     cout << endl;
@@ -236,6 +237,14 @@ void LibApp::checkOutPub() {
     cout << "Checkout publication from the library" << endl;
     int selection = search(3);
     if (selection == -1) return;
+
+    Publication* pub = nullptr;
+    for (int i = 0; i < m_numOfLoadedPubs; i++) {
+        if (m_publications[i]->getRef() == selection) {
+            pub = m_publications[i];
+            cout << *pub << endl;
+        }
+    }
 
     if (confirm("Check out publication?")) {
         int membershipNum = -1;
@@ -249,12 +258,7 @@ void LibApp::checkOutPub() {
                 cout << "Invalid membership number, try again: ";
             }
         } while (membershipNum < 9999 || membershipNum > 99999);
-        
-        for (int i = 0; i < m_numOfLoadedPubs; i++) {
-            if (m_publications[i]->getRef() == selection) {
-                m_publications[i]->set(membershipNum);
-            }
-        }
+        pub->set(membershipNum);
         m_changed = true;
         cout << "Publication checked out" << endl;
     }
