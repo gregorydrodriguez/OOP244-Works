@@ -141,6 +141,7 @@ int LibApp::search(int searchMode) {
         }
     } else {
         cout << "No matches found!" << endl;
+        return -1;
     }
     return selection;
 }
@@ -232,19 +233,28 @@ void LibApp::removePublication() {
 
 // MS5 Modification
 void LibApp::checkOutPub() {
-    cout << "Checkout publication from the library";
+    cout << "Checkout publication from the library" << endl;
     int selection = search(3);
+    if (selection == -1) return;
+
     if (confirm("Check out publication?")) {
-        int membershipNum;
+        int membershipNum = -1;
         cout << "Enter Membership number: ";
         do {
             cin >> membershipNum;
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (cin.fail()) {
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
             if (membershipNum < 9999 || membershipNum > 99999) {
                 cout << "Invalid membership number, try again: ";
             }
         } while (membershipNum < 9999 || membershipNum > 99999);
-        m_publications[selection]->set(membershipNum);
+        
+        for (int i = 0; i < m_numOfLoadedPubs; i++) {
+            if (m_publications[i]->getRef() == selection) {
+                m_publications[i]->set(membershipNum);
+            }
+        }
         m_changed = true;
         cout << "Publication checked out" << endl;
     }
