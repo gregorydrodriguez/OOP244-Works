@@ -109,7 +109,7 @@ int LibApp::search(int searchMode) {
     char title[256];
     cin >> title;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    PublicationSelector pubSelector;
+    PublicationSelector pubSelector("Select one of the following found matches: ");
     bool matchesFound = false;
     for (int i = 0; i < m_numOfLoadedPubs; i++) {
         if (pubType == m_publications[i]->type()) {
