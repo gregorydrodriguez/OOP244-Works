@@ -183,7 +183,7 @@ void LibApp::returnPub() {
 // MS5 Modification
 void LibApp::newPublication() {
     if (m_numOfLoadedPubs == SDDS_LIBRARY_CAPACITY) {
-        cout << "Library is at its maximum capacity!" << endl;
+        cout << "Library is at its maximum capacity!" << endl << endl;
         return;
     }
     cout << "Adding new publication to the library" << endl;
