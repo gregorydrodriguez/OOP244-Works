@@ -79,6 +79,7 @@ void LibApp::load() {
         }
         type = '\0';
     }
+    cout << "after load" << m_numOfLoadedPubs << endl;
 }
 
 // MS5 Modification
@@ -182,6 +183,8 @@ void LibApp::returnPub() {
 
 // MS5 Modification
 void LibApp::newPublication() {
+    cout << "loaded pubs:" << m_numOfLoadedPubs << endl;
+    cout << "lib cap:" << SDDS_LIBRARY_CAPACITY << endl;
     if (m_numOfLoadedPubs == SDDS_LIBRARY_CAPACITY) {
         cout << "Library is at its maximum capacity!";
         return;
