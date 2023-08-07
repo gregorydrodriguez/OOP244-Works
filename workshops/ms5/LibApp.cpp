@@ -171,7 +171,7 @@ void LibApp::returnPub() {
             cout << "Please pay $";
             cout << fixed << setprecision(2) << lateFee;
             cout << " penalty for being ";
-            cout << daysLoaned << " days late!" << endl;
+            cout << daysLoaned - 15 << " days late!" << endl;
         }
         pub->set(0);
         m_changed = true;
