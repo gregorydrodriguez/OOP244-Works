@@ -140,7 +140,7 @@ int LibApp::search(int searchMode) {
             cout << "Aborted!" << endl;
         }
     } else {
-        cout << "No matches found!" << endl;
+        cout << "No matches found!" << endl << endl;
         return -1;
     }
     return selection;
