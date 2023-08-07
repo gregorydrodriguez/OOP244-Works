@@ -99,12 +99,12 @@ void LibApp::search() {
 // MS5 Modification
 int LibApp::search(int searchMode) {
     // cout << "Searching for publication" << endl;
-    int pubTypeSelection = m_pubTypeMenu->run();
-    if (pubTypeSelection == 0) {
+    int selection = m_pubTypeMenu->run();
+    if (selection == 0) {
         cout << "Aborted!" << endl;
-        return pubTypeSelection;
+        return selection;
     }
-    char pubType = (pubTypeSelection == 1) ? 'B' : 'P';
+    char pubType = (selection == 1) ? 'B' : 'P';
     cout << "Publication Title: ";
     char title[256];
     cin >> title;
@@ -135,14 +135,14 @@ int LibApp::search(int searchMode) {
     }
     if (matchesFound) {
         pubSelector.sort();
-        pubTypeSelection = pubSelector.run();
-        if (pubTypeSelection == 0) {
+        selection = pubSelector.run();
+        if (selection == 0) {
             cout << "Aborted!" << endl;
         }
     } else {
         cout << "No matches found!" << endl;
     }
-    return pubTypeSelection;
+    return selection;
 }
 
 // MS5 Modification
@@ -153,10 +153,10 @@ Publication* LibApp::getPub(int libRef) {
 // MS5 Modification
 void LibApp::returnPub() {
     cout << "Return publication to the library" << endl;
-    int pubTypeSelection = search(2);
+    int selection = search(2);
     if (confirm("Return Publication?")) {
         Date currentDate = Date();
-        int daysLoaned = currentDate - m_publications[pubTypeSelection]->checkoutDate();
+        int daysLoaned = currentDate - m_publications[selection]->checkoutDate();
         if (daysLoaned > 15) {
             double lateFee = (double)(daysLoaned - 15) * 0.50;
             cout << "Please pay $";
@@ -164,7 +164,7 @@ void LibApp::returnPub() {
             cout << " penalty for being ";
             cout << daysLoaned << " days late!" << endl;
         }
-        m_publications[pubTypeSelection]->set(0);
+        m_publications[selection]->set(0);
         m_changed = true;
         cout << "Publication returned" << endl;
     }
@@ -178,12 +178,12 @@ void LibApp::newPublication() {
         return;
     }
     cout << "Adding new publication to the library" << endl;
-    int pubTypeSelection = m_pubTypeMenu->run();
+    int selection = m_pubTypeMenu->run();
     Publication* addition;
-    if (pubTypeSelection == 1) {
+    if (selection == 1) {
         addition = new Book();
         addition->read(cin);
-    } else if (pubTypeSelection == 2) {
+    } else if (selection == 2) {
         addition = new Publication();
         addition->read(cin);
     }
@@ -214,10 +214,17 @@ void LibApp::newPublication() {
 // MS5 Modification
 void LibApp::removePublication() {
     cout << "Removing publication from the library" << endl;
-    int pubTypeSelection = search(1);
+    int selection = search(1);
+    Publication* found = nullptr;
+    for (int i = 0; i < m_numOfLoadedPubs; i++) {
+        if (m_publications[i]->getRef() == selection) {
+            cout << *m_publications[i] << endl;
+            found = m_publications[i];
+        }
+    }
     if (confirm("Remove this publication from the library?")) {
         m_changed = true;
-        m_publications[pubTypeSelection]->setRef(0);
+        found->setRef(0);
         cout << "Publication removed" << endl;
     }
     cout << endl;
@@ -226,7 +233,7 @@ void LibApp::removePublication() {
 // MS5 Modification
 void LibApp::checkOutPub() {
     cout << "Checkout publication from the library";
-    int pubTypeSelection = search(3);
+    int selection = search(3);
     if (confirm("Check out publication?")) {
         int membershipNum;
         cout << "Enter Membership number: ";
@@ -237,7 +244,7 @@ void LibApp::checkOutPub() {
                 cout << "Invalid membership number, try again: ";
             }
         } while (membershipNum < 9999 || membershipNum > 99999);
-        m_publications[pubTypeSelection]->set(membershipNum);
+        m_publications[selection]->set(membershipNum);
         m_changed = true;
         cout << "Publication checked out" << endl;
     }
@@ -247,32 +254,32 @@ void LibApp::checkOutPub() {
 // MS5 Modification
 void LibApp::run() {
     bool done = false;
-    unsigned int pubTypeSelection = 1;
+    unsigned int selection = 1;
     while (!done) {
         m_mainMenu->displayTitle();
         m_mainMenu->displayMenu();
         cout << "> ";
         cin.clear();
-        cin >> pubTypeSelection;
-        if (pubTypeSelection == 1) {
+        cin >> selection;
+        if (selection == 1) {
             newPublication();
         }
-        if (pubTypeSelection == 2) {
+        if (selection == 2) {
             removePublication();
         }
-        if (pubTypeSelection == 3) {
+        if (selection == 3) {
             checkOutPub();
         }
-        if (pubTypeSelection == 4) {
+        if (selection == 4) {
             returnPub();
         }
-        if (pubTypeSelection == 0) {
+        if (selection == 0) {
             if (m_changed == true) {
-                pubTypeSelection = m_exitMenu->run();
-                if (pubTypeSelection == 1) {
+                selection = m_exitMenu->run();
+                if (selection == 1) {
                     save();
                     done = true;
-                } else if (pubTypeSelection == 0) {
+                } else if (selection == 0) {
                     if (confirm("This will discard all the changes are you sure?")) {
                         done = true;
                     }
