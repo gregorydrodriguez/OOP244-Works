@@ -107,8 +107,7 @@ int LibApp::search(int searchMode) {
     char pubType = (selection == 1) ? 'B' : 'P';
     cout << "Publication Title: ";
     char title[256];
-    cin >> title;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin.getline(title, 255, '\n');
     PublicationSelector pubSelector("Select one of the following found matches:");
     bool matchesFound = false;
     for (int i = 0; i < m_numOfLoadedPubs; i++) {
@@ -156,6 +155,10 @@ Publication* LibApp::getPub(int libRef) {
 void LibApp::returnPub() {
     cout << "Return publication to the library" << endl;
     int selection = search(2);
+    if (selection == 0) {
+        cout << endl;
+        return;
+    }
     Publication* pub = nullptr;
     for (int i = 0; i < m_numOfLoadedPubs; i++) {
         if (m_publications[i]->getRef() == selection) {
@@ -188,6 +191,10 @@ void LibApp::newPublication() {
     }
     cout << "Adding new publication to the library" << endl;
     int selection = m_pubTypeMenu->run();
+        if (selection == 0) {
+        cout << "Aborted!" <<endl << endl;
+        return;
+    }
     Publication* addition;
     if (selection == 1) {
         addition = new Book();
@@ -196,7 +203,7 @@ void LibApp::newPublication() {
         addition = new Publication();
         addition->read(cin);
     }
-    if (!cin.good()) {
+    if (!cin.good() || cin.fail()) {
         cout << "Aborted!" << endl;
         return;
     } else {
@@ -217,6 +224,9 @@ void LibApp::newPublication() {
             return;
         }
     }
+    if (selection == 0) {
+        cout << "Aborted!" <<endl;
+    }
     cout << endl;
 }
 
@@ -224,6 +234,10 @@ void LibApp::newPublication() {
 void LibApp::removePublication() {
     cout << "Removing publication from the library" << endl;
     int selection = search(1);
+    if (selection == 0) {
+        cout << endl;
+        return;
+    }
     Publication* pub = nullptr;
     for (int i = 0; i < m_numOfLoadedPubs; i++) {
         if (m_publications[i]->getRef() == selection) {
