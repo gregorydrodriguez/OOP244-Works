@@ -79,7 +79,6 @@ void LibApp::load() {
         }
         type = '\0';
     }
-    cout << "after load" << m_numOfLoadedPubs << endl;
 }
 
 // MS5 Modification

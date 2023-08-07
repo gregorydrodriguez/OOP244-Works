@@ -66,9 +66,9 @@ ostream& Date::write(ostream& os) const {
 istream& Date::read(istream& is) {
     m_ErrorCode = NO_ERROR;
     is >> m_year;
-    is.ignore(numeric_limits<streamsize>::max(), '/');
+    is.ignore();
     is >> m_mon;
-    is.ignore(numeric_limits<streamsize>::max(), '/');
+    is.ignore();
     is >> m_day;
     // (removed for ms3) is.ignore(numeric_limits<streamsize>::max(), '\n');
     // is.ignore(numeric_limits<streamsize>::max(), '\n');
