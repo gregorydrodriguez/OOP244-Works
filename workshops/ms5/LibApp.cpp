@@ -156,9 +156,16 @@ Publication* LibApp::getPub(int libRef) {
 void LibApp::returnPub() {
     cout << "Return publication to the library" << endl;
     int selection = search(2);
+    Publication* pub = nullptr;
+    for (int i = 0; i < m_numOfLoadedPubs; i++) {
+        if (m_publications[i]->getRef() == selection) {
+            pub = m_publications[i];
+            cout << *pub << endl;
+        }
+    }
     if (confirm("Return Publication?")) {
         Date currentDate = Date();
-        int daysLoaned = currentDate - m_publications[selection]->checkoutDate();
+        int daysLoaned = currentDate - pub->checkoutDate();
         if (daysLoaned > 15) {
             double lateFee = (double)(daysLoaned - 15) * 0.50;
             cout << "Please pay $";
@@ -166,7 +173,7 @@ void LibApp::returnPub() {
             cout << " penalty for being ";
             cout << daysLoaned << " days late!" << endl;
         }
-        m_publications[selection]->set(0);
+        pub->set(0);
         m_changed = true;
         cout << "Publication returned" << endl;
     }
@@ -237,7 +244,6 @@ void LibApp::checkOutPub() {
     cout << "Checkout publication from the library" << endl;
     int selection = search(3);
     if (selection == -1) return;
-
     Publication* pub = nullptr;
     for (int i = 0; i < m_numOfLoadedPubs; i++) {
         if (m_publications[i]->getRef() == selection) {
@@ -245,7 +251,6 @@ void LibApp::checkOutPub() {
             cout << *pub << endl;
         }
     }
-
     if (confirm("Check out publication?")) {
         int membershipNum = -1;
         cout << "Enter Membership number: ";
