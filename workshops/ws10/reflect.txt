@@ -1,0 +1,30 @@
+/*
+Name: Gregory Rodriguez
+E-mail: grodriguez13@myseneca.ca
+Student ID: 127880227
+Workshop 10
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+*/
+
+Templates
+Templates are an organized and powerful way to create reusable code. Templates are similar to overloading,
+but with less lines of code. In class we learn that a template is like a blueprint that we define.
+At compile time, the compiler generates the code with the specific arguments.
+
+Typename
+Typename is a keyword that represents a primitive (int, char, etc.) or composite type (classes, objects, etc.).
+The compiler will replace Typename with the appropriate type depending on the arguments provided.
+
+Functions implemented in workshop 10
+
+bool search()
+The templated bool search function requires one template class (T)
+and takes in a random key type (U). Essentially, this function
+will not work without a template class. This template function
+will only work if the objects passing through have equivalency
+overloads, for example "==" operator overload.
+
+listArrayElements()
+This templated function requires an object that inherits
+the shift operator overload from the base class "ReadWrite".
+Essentially, employee, car, and student are derived from ReadWrite.
