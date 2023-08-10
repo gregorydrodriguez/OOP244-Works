@@ -1,0 +1,15 @@
+/*
+Name: Gregory Rodriguez
+E-mail: grodriguez13@myseneca.ca
+Student ID: 127880227
+Workshop 8
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+*/
+
+Abstract Classes and Virtual Functions
+
+Abstract classes are similar to blueprints for concrete classes (derived from abstract classes).
+The abstract class implements virtual functions are functions that a concrete class will inherit
+from the base/abstract class. This is useful in this workshop as we want our rectangle, and line
+classes to behave in different ways.
+

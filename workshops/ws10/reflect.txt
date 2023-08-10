@@ -28,3 +28,58 @@ listArrayElements()
 This templated function requires an object that inherits
 the shift operator overload from the base class "ReadWrite".
 Essentially, employee, car, and student are derived from ReadWrite.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Workshop 6 lab
+
+The Rule of 3 - Copy Constructor
+
+The copy constructor is implemented to deep copy the values of one object to a another object. This requires making sure the object receiving the
+the new values is first set to an empty state. To prevent repetitive code, we implement our object methods into the copy constructor. This will
+prove useful in our copy assignment overload.
+
+The Rule of 3 - Copy Assignment
+
+The copy assignment overloads the '=' operator. Similar to the copy constructor we set the current object to a safe empty state. We then deep copy
+all of the values with the help of some of our other functions that take care of the abstraction.
+
+The Rule of 3 - Destructor
+
+Simply deallocates memory from the heap
+
+this vs *this
+
+I had a lot of issues, because I was using this instead of *this. This created segmentation faults during compilation. this passes the pointer, while
+*this passes the values.
+
+istr.ignore()
+
+In getFile(), I had forgot to implement istr.ignore to clean up after myself and spent hours trying to debug. This function will clear the input buffer 
+via the istr object.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+ws7 - Inheritance
+
+Parent(Base) & Child(Derived) Classes
+The child class can inherit the attributes and methods of it's parent/Base
+class. This means you don't have to create new attributes/methods, due to the
+child/derived class inheriting these members.
+
+Parent Constructor Call
+You can reuse code for the child constructor by calling the parent's constructor.
+
+Protected Members 
+protected members are similar to private members, with the exception that
+child/derived classes have access to these members.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Abstract Classes and Virtual Functions
+
+Abstract classes are similar to blueprints for concrete classes (derived from abstract classes).
+The abstract class implements virtual functions are functions that a concrete class will inherit
+from the base/abstract class. This is useful in this workshop as we want our rectangle, and line
+classes to behave in different ways.
